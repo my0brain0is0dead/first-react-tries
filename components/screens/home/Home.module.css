@@ -1,0 +1,56 @@
+.btn {
+    margin: 20px;
+    color: white;
+    border-radius: 20px;
+    background-color: #303035;
+    width: 300px;
+    height: 75px;
+}
+
+.btn:hover {
+    transition: 1s;
+    background-color: rgb(121, 121, 121);
+    -webkit-transform: 10px;
+    transform: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.outp {
+    --s: 0.1em;
+    --c: #2c4bff;
+    
+    color: whitesmoke;
+    padding-bottom: var(--s);
+    background: 
+    linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: 1s;
+}
+
+.outp {
+    font-family: system-ui, sans-serif;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.div1 {
+    width: 50%;
+    height: 50%;
+}
+
+.image {
+    background-size: cover;
+    width: 400px;
+    height: 308px;
+    background-repeat: no-repeat;
+}
+
+.range {
+    margin: 20px;
+}
+
+/*
+зафиксировать h1 и инпут в одном блоке
+*/
