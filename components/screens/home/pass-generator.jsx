@@ -8,25 +8,21 @@ const PasswordGenerator = function PasswordGenerator() {
     const [lowercaseFlag, setLowercaseFlag] = useState (false)
     const [uppercaseFlag, setUppercaseFlag] = useState (false)
     const [specSymbolsFlag, setSpecSymbolsFlag] = useState (false)
-    let usedSymbols = ''
-    let generatedPassword = ''
+    const [generatedPassword, setGeneratedPassword] = useState ('')
+    const [usedSymbols, setUsedSymbols] = useState('')
 
     function switchNumbersFlag() {
         setNumbersFlag(!numbersFlag)
     }
-
     function switchLowercaseFlag() {
         setLowercaseFlag(!lowercaseFlag)
     }
-
     function switchUppercaseFlag() {
         setUppercaseFlag(!uppercaseFlag)
     }
-
     function switchSpecSymbolsFlag() {
         setSpecSymbolsFlag(!specSymbolsFlag)
     }
-
     function generateList() {
         const numbersList = "1234567890"
         const lowercaseLettersList = "abcdefghijklmnopqrstuvwxyz"
@@ -47,14 +43,14 @@ const PasswordGenerator = function PasswordGenerator() {
         }
         return usedSymbols
     }
-
     function generatePassword() {
-        generateList()
-        for (let i = 0; i < passwordLength; i++) {
-            let newCharIndex = Math.floor(Math.random() * usedSymbols.length)
-            let newChar = usedSymbols.charAt(newCharIndex)
-            generatedPassword += newChar
-        }
+        let usedSymbols = generateList()
+        let generatedPassword = ""
+            for (let i = 0; i < passwordLength; i++) {
+                let newCharIndex = Math.floor(Math.random() * usedSymbols.length)
+                let newChar = usedSymbols.charAt(newCharIndex)
+                generatedPassword += newChar
+            }
         return generatedPassword
     }
 
@@ -66,8 +62,8 @@ const PasswordGenerator = function PasswordGenerator() {
                         onClick={switchNumbersFlag}
                         className={styles.checkbox}
                         type="checkbox"
-                        id="numbersFlag">
-                    </input>
+                        id="numbersFlag"
+                        ></input>
                     <label for="numbersFlag">Включить цифры</label>
                 </p>
 
@@ -76,8 +72,8 @@ const PasswordGenerator = function PasswordGenerator() {
                         onChange={switchLowercaseFlag}
                         className={styles.item}
                         type="checkbox"
-                        id="lowercaseFlag">
-                    </input>
+                        id="lowercaseFlag"
+                    ></input>
                     <label for="lowercaseFlag">Включить нижний регистр</label>
                 </p>
 
@@ -119,14 +115,17 @@ const PasswordGenerator = function PasswordGenerator() {
                 <div className={styles.buttonDiv}>
                     <button
                     onClick={generatePassword}
-                    className={styles.btn}>Сгенерировать пароль
+                    className={styles.btn}>
+                        Сгенерировать пароль
                     </button>
-                    <button className={styles.btn}>Сгенерировать кастомный пароль</button>
+                    <button className={styles.btn}>
+                        Сгенерировать кастомный пароль
+                    </button>
                 </div>
             <div>
                 <input
                 className={styles.outp}
-                type="text">{generatedPassword}</input>
+                type="text"></input>
             </div>
         </div>
     )
@@ -135,6 +134,7 @@ const PasswordGenerator = function PasswordGenerator() {
 export default PasswordGenerator
 
 /*
-вобщем я пока не знаю нормального синтаксиса, потому что не могу понять как получать и принимать values и еще вызывать функции с пропсами в OnClick
+вобщем я пока не знаю нормального синтаксиса, потому что не могу 
+понять как получать и принимать values и еще вызывать функции с пропсами в OnClick
 я пока заброшу этот проект, может быть потом его закончу. буду пока изучать базу react'a
 */
