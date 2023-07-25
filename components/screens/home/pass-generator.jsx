@@ -8,27 +8,30 @@ const PasswordGenerator = function PasswordGenerator() {
     const [lowercaseFlag, setLowercaseFlag] = useState (false)
     const [uppercaseFlag, setUppercaseFlag] = useState (false)
     const [specSymbolsFlag, setSpecSymbolsFlag] = useState (false)
-    const [generatedPassword, setGeneratedPassword] = useState ('')
-    const [usedSymbols, setUsedSymbols] = useState('')
+    let generatedPassword = generatePassword()
 
     function switchNumbersFlag() {
         setNumbersFlag(!numbersFlag)
     }
+
     function switchLowercaseFlag() {
         setLowercaseFlag(!lowercaseFlag)
     }
+
     function switchUppercaseFlag() {
         setUppercaseFlag(!uppercaseFlag)
     }
+
     function switchSpecSymbolsFlag() {
         setSpecSymbolsFlag(!specSymbolsFlag)
     }
+
     function generateList() {
         const numbersList = "1234567890"
         const lowercaseLettersList = "abcdefghijklmnopqrstuvwxyz"
         const uppercaseLettersList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         const specSymbolsList = "!#$%^&*+"
-
+        let usedSymbols = ""
         if (numbersFlag === true) {
             usedSymbols += numbersList
         }
@@ -92,8 +95,8 @@ const PasswordGenerator = function PasswordGenerator() {
                         onChange={switchSpecSymbolsFlag}
                         className={styles.item}
                         type="checkbox"
-                        id="specSymbolsFlag">
-                    </input>
+                        id="specSymbolsFlag"
+                    ></input>
                     <label for="specSymbolsFlag">Включить специальные символы</label>
                 </p>
             <div className={styles.div1}>
@@ -124,6 +127,8 @@ const PasswordGenerator = function PasswordGenerator() {
                 </div>
             <div>
                 <input
+                id = 'outputId'
+                value = {generatedPassword}
                 className={styles.outp}
                 type="text"></input>
             </div>
