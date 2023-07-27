@@ -32,6 +32,7 @@ const PasswordGenerator = function PasswordGenerator() {
         const uppercaseLettersList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         const specSymbolsList = "!#$%^&*+"
         let usedSymbols = ""
+        
         if (numbersFlag === true) {
             usedSymbols += numbersList
         }

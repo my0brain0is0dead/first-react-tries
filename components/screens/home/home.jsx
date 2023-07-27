@@ -2,14 +2,12 @@ import React from 'react'
 import Counter from './counter'
 import BoundRangeText from './boundRangeText'
 import PasswordGenerator from './pass-generator'
+import ClassCounter from './classCounter'
 
 function Home() {
     return (
         <div>
-          <Counter/>
-          <Counter/>
-          <Counter/>
-          <Counter/>
+          <ClassCounter/>
         </div>
     )
 }
@@ -17,5 +15,4 @@ function Home() {
 export default Home
 
 /*
-
 */
