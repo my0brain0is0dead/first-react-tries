@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Iter {
+    width: 800px;
+}
+
+.post {
+    display: flex;
+    padding: 15px;
+    border: 2px solid teal;
+    margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    margin: 50px;
+    color: white;
+    border-radius: 20px;
+    background-color: #303035;
+    width: 300px;
+    height: 75px;
+}
+
+.btn:hover {
+    transition: 1s;
+    background-color: rgb(121, 121, 121);
+    -webkit-transform: 10px;
+    transform: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
